@@ -4,6 +4,10 @@ body {
     padding: 20px;
 }
 
+#result {
+    font-size: 40px;
+}
+
 .underline {
     text-decoration: underline;
     color: blue;
