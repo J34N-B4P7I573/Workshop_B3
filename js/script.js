@@ -94,7 +94,7 @@ function detecterCaracteres() {
     var traduction = traduireChiffresEnLettres(inputNumber);
 
     // Affichage du résultat
-    outputText.textContent = "En lettres : " + traduction;
+    outputText.textContent = "Votre traduction en Lettres : " + traduction;
   }
 
   function traduireChiffresEnLettres(chiffres) {
@@ -111,7 +111,6 @@ function detecterCaracteres() {
 
     var traduction = "";
 
-    // Traduction chaque chiffre
     if (chiffres.length === 1) {
       // Pour les chiffres de 0 à 9
       var chiffre = parseInt(chiffres[0]);
@@ -132,6 +131,68 @@ function detecterCaracteres() {
           traduction = dizainesEnLettres[dizaine];
           if (unite > 0) {
             traduction += "-" + chiffresEnLettresJusquA19[unite];
+          }
+        }
+      } else {
+        traduction = " (non-numérique) ";
+      }
+    } else if (chiffres.length === 3) {
+      // Pour les chiffres de 100 à 999
+      var centaine = parseInt(chiffres[0]);
+      var dizaine = parseInt(chiffres[1]);
+      var unite = parseInt(chiffres[2]);
+
+      if (!isNaN(centaine) && !isNaN(dizaine) && !isNaN(unite)) {
+        traduction = chiffresEnLettresJusquA19[centaine] + " cent";
+
+        if (dizaine > 0 || unite > 0) {
+          traduction += " et ";
+          if (dizaine === 1) {
+            traduction += chiffresEnLettresJusquA19[dizaine * 10 + unite];
+          } else {
+            traduction += dizainesEnLettres[dizaine];
+            if (unite > 0) {
+              traduction += "-" + chiffresEnLettresJusquA19[unite];
+            }
+          }
+        }
+      } else {
+        traduction = " (non-numérique) ";
+      }
+    } else if (chiffres.length === 4) {
+      // Pour les chiffres de 1000 à 9999
+      var millier = parseInt(chiffres[0]);
+      var centaine = parseInt(chiffres[1]);
+      var dizaine = parseInt(chiffres[2]);
+      var unite = parseInt(chiffres[3]);
+
+      if (!isNaN(millier) && !isNaN(centaine) && !isNaN(dizaine) && !isNaN(unite)) {
+        traduction = chiffresEnLettresJusquA19[millier] + " mille";
+
+        if (centaine > 0 || dizaine > 0 || unite > 0) {
+          traduction += " ";
+          if (centaine === 0 && (dizaine > 0 || unite > 0)) {
+            traduction += "et ";
+          }
+
+          if (centaine > 0) {
+            traduction += chiffresEnLettresJusquA19[centaine] + " cent";
+            if (dizaine > 0 || unite > 0) {
+              traduction += " et ";
+            }
+          }
+
+          if (dizaine > 0) {
+            if (dizaine === 1) {
+              traduction += chiffresEnLettresJusquA19[dizaine * 10 + unite];
+            } else {
+              traduction += dizainesEnLettres[dizaine];
+              if (unite > 0) {
+                traduction += "-" + chiffresEnLettresJusquA19[unite];
+              }
+            }
+          } else if (unite > 0) {
+            traduction += chiffresEnLettresJusquA19[unite];
           }
         }
       } else {
