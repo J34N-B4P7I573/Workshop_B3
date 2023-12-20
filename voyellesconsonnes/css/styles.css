@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+.underline {
+    text-decoration: underline;
+    color: blue;
+}
+
+.underline-consonant {
+    color: red;
+}
