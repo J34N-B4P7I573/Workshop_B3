@@ -73,3 +73,27 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#inputField {
+    margin: 20px;
+  }
+
+  #outputTable {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+
+  #outputTable th, #outputTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #outputTable tr {
+    background-color: white;
+  }
+
+  #outputTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aide Lecture Paragraphese CP</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Aide à la Lecture des paragraphes : Mode Copy Paste</h1>
+    </header>
+    <p>
+        Vous êtes sur la page d'aide à la lecture de paragraphes. Vous pouvez coller vos textes ci-dessous et
+        la ligne serait intégrée à l'aide après un ., un ?, un ! ou encore un : .
+    </p>
+  <div>
+    <label for="inputField">Saisissez du texte :</label>
+    <input type="text" id="inputField" oninput="detecterCaracteres2()">
+  </div>
+
+  <table id="outputTable">
+    <thead>
+      <tr>
+        <th>Texte</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+</body>
+</html>
