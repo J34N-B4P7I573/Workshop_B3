@@ -23,3 +23,30 @@ function soulignerLettres() {
     // Afficher le résultat dans le paragraphe
     document.getElementById("result").innerHTML = resultText;
 }
+
+function detecterCaracteres() {
+    var inputField = document.getElementById('inputField');
+    var inputValue = inputField.value;
+
+    if (/[.!?:]/.test(inputValue)) {
+      var tableBody = document.getElementById('tableBody');
+      var newRow = tableBody.insertRow(-1);
+      var cell = newRow.insertCell(0);
+      cell.innerHTML = inputValue;
+
+      // Ajoute une ligne vide avec la couleur rouge
+      var emptyRow = tableBody.insertRow(-1);
+      var emptyCell = emptyRow.insertCell(0);
+      emptyCell.innerHTML = '&nbsp;'; // Ajoute un espace non rompu pour maintenir la cellule vide
+      emptyRow.classList.add('emptyRow');
+
+      // Efface le champ de saisie après l'ajout au tableau
+      inputField.value = '';
+
+      // Alterne les couleurs des lignes
+      var rows = tableBody.getElementsByTagName('tr');
+      for (var i = 0; i < rows.length; i++) {
+        rows[i].style.backgroundColor = i % 2 === 0 ? '#f2f2f2' : 'white';
+      }
+    }
+  }
