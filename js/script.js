@@ -98,21 +98,44 @@ function detecterCaracteres() {
   }
 
   function traduireChiffresEnLettres(chiffres) {
-    // Dictionnaire des chiffres en lettres
-    var chiffresEnLettres = [
-      "zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"
+    // Dictionnaire des chiffres en lettres jusqu'à 19
+    var chiffresEnLettresJusquA19 = [
+      "", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf",
+      "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"
+    ];
+
+    // Dictionnaire des dizaines en lettres
+    var dizainesEnLettres = [
+      "", "", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante", "quatre-vingt", "quatre-vingt"
     ];
 
     var traduction = "";
 
     // Traduction chaque chiffre
-    for (var i = 0; i < chiffres.length; i++) {
-      var chiffre = parseInt(chiffres[i]);
-
+    if (chiffres.length === 1) {
+      // Pour les chiffres de 0 à 9
+      var chiffre = parseInt(chiffres[0]);
       if (!isNaN(chiffre)) {
-        traduction += chiffresEnLettres[chiffre] + " ";
+        traduction = chiffresEnLettresJusquA19[chiffre];
       } else {
-        traduction += " (non-numérique) ";
+        traduction = " (non-numérique) ";
+      }
+    } else if (chiffres.length === 2) {
+      // Pour les chiffres de 10 à 99
+      var dizaine = parseInt(chiffres[0]);
+      var unite = parseInt(chiffres[1]);
+
+      if (!isNaN(dizaine) && !isNaN(unite)) {
+        if (dizaine === 1) {
+          traduction = chiffresEnLettresJusquA19[dizaine * 10 + unite];
+        } else {
+          traduction = dizainesEnLettres[dizaine];
+          if (unite > 0) {
+            traduction += "-" + chiffresEnLettresJusquA19[unite];
+          }
+        }
+      } else {
+        traduction = " (non-numérique) ";
       }
     }
 
