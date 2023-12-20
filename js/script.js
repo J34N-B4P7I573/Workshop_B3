@@ -85,3 +85,36 @@ function detecterCaracteres() {
       }
     }
   }
+
+  function traduireEnLettres() {
+    var inputNumber = document.getElementById('inputNumber').value;
+    var outputText = document.getElementById('outputText');
+
+    // Traduction des chiffres en lettres
+    var traduction = traduireChiffresEnLettres(inputNumber);
+
+    // Affichage du résultat
+    outputText.textContent = "En lettres : " + traduction;
+  }
+
+  function traduireChiffresEnLettres(chiffres) {
+    // Dictionnaire des chiffres en lettres
+    var chiffresEnLettres = [
+      "zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"
+    ];
+
+    var traduction = "";
+
+    // Traduction chaque chiffre
+    for (var i = 0; i < chiffres.length; i++) {
+      var chiffre = parseInt(chiffres[i]);
+
+      if (!isNaN(chiffre)) {
+        traduction += chiffresEnLettres[chiffre] + " ";
+      } else {
+        traduction += " (non-numérique) ";
+      }
+    }
+
+    return traduction.trim();
+  }
