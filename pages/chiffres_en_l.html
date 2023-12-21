@@ -44,11 +44,11 @@ La page chiffres_en_l permet : entrée un nombre, sortie le nombre en toutes let
   <header>
     <h1>Chiffres en Lettres</h1>
 </header>
-<!--contenu de la page-->
-<p>
+<div class="content">
+<p >
     Entrez ci-dessous un chiffre/nombre (jusqu'à 9999) et vous obtiendrez la traduction en lettres !
 </p>
-  <div>
+  <div class="sub-paragraphe">
     <label for="inputNumber">Saisissez un nombre :</label>
     <input type="number" id="inputNumber" oninput="traduireEnLettres()">
   </div>
@@ -56,7 +56,7 @@ La page chiffres_en_l permet : entrée un nombre, sortie le nombre en toutes let
   <div id="outputText"></div>
 
   <button onclick="saveTextAsFile()">Save as .txt</button>
-
+</div>
 
 </body>
 </html>

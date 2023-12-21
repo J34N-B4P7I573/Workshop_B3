@@ -34,12 +34,13 @@ body {
 header {
     background-color: #e4df89;
     color: black;
+    margin-top: 20px;
     padding: 10px;
     width: 100%;
     height: 100%;
     border-bottom: solid 3px transparent; 
     border-radius: 10px;
-    border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.8), rgba(255,255,255,0)) 1 100%;
+    border-image: linear-gradient(to bottom, #e4df89), #e4df89, white 1 100%;
 }
 
 .logo{
@@ -85,11 +86,15 @@ nav ul li:hover ul {
 nav ul li ul {
     display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #dddaa6;
     padding: 10px;
     top: 100%; 
     left: 0;
     width: 150px; 
+    border-left: solid 3px; 
+    border-top: solid 3px ;
+    border-radius: 10px;
+    border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.8), rgba(255,255,255,0)) 1 100%;
 }
 
 nav ul li ul li {
@@ -97,12 +102,12 @@ nav ul li ul li {
     margin: 5px 0;
 }
 
-.main-paragraphe{
+.content p {
     font-size: 1.2em;
     line-height: 1.6;
     margin: 20px 0;
     padding: 10 10 0 10;
-    text-align: justify;
+    text-align: center;
 
 }
 
@@ -110,7 +115,7 @@ nav ul li ul li {
     font-family: "RobotoItalicBold", sans-serif;
     font-size: 1.5em; 
     color:#8D8C71;
-    text-align: center;
+    text-align:center;
 }
 
 .surlibeige{
@@ -172,6 +177,8 @@ footer p{
   #outputText {
     margin: 20px;
     font-weight: bold;
+    text-align: center;
+    font-size: 30px;
   }
   .div2{
     background-color: white;
