@@ -7,6 +7,7 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
+    <div class="content">
     <header>
         <h1>Exercice Prononciation Nombres avec Reconnaissance Vocale</h1>
     </header>
@@ -16,8 +17,12 @@
         Si c'est bon, il sera affiché "Succès" sinon "Essayez encore".
     </p>
     <div class="number" id="number"></div>
-    <button onclick="startRecognition()">Faire une proposition</button>
+    <button id="button-guess" onclick="startRecognition()">Faire une proposition</button>
     <div class="status" id="status"></div>
     <div class="counter">Score: <span id="correctCount">0</span></div>
+</div>
+    <footer>
+        <p>&copy; Les dystingués - BOC 2023</p>
+      </footer>
 </body>
 </html>

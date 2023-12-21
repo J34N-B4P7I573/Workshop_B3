@@ -108,6 +108,7 @@ nav ul li ul li {
     margin: 20px 0;
     padding: 10 10 0 10;
     text-align: center;
+    color: black;
 
 }
 
@@ -127,10 +128,14 @@ nav ul li ul li {
 }
 
 .content {
+    background-color: #e4df89;
     max-width: 80%;
     margin: 20px auto;
     text-align: justify; 
     padding: 20px;
+    border-bottom: solid 3px transparent; 
+    border-radius: 10px;
+    border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.8), rgba(255,255,255,0)) 1 100%;
 }
 
 footer {
@@ -188,17 +193,21 @@ footer p{
   }
 
 .number {
+    text-align: center;
     font-size: 40px;
     margin-bottom: 20px;
 }
 .status {
+    text-align: center;
     font-size: 24px;
     color: green;
 }
 
 #multiplication-tables {
+    background-color: #e4df89;
     margin: 20px;
     padding: 10px;
+    text-align: center;
 }
 
 .table {
@@ -217,4 +226,12 @@ footer p{
 
 .cell {
     margin: 5px;
+}
+
+.counter{
+    text-align: center;
+}
+
+#button-guess{
+    text-align: center;
 }
