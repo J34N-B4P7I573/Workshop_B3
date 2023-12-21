@@ -20,10 +20,14 @@ header {
     padding: 10px;
 }
 
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+   
+    display :flex;
+    justify-content: space-evenly; 
 }
 
 nav ul li {
@@ -101,4 +105,10 @@ footer {
   #outputText {
     margin: 20px;
     font-weight: bold;
+  }
+  .div2{
+    background-color: white;
+    height: 5px; 
+    width: 100%;
+    font-size: 1px;
   }
