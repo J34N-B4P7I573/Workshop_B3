@@ -65,6 +65,17 @@ nav ul li ul li {
     margin: 5px 0;
 }
 
+.main-paragraphe{
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.sub-paragraphe{
+    font-size: 1.5em; 
+    color:blue;
+}
+
 .content {
     max-width: 800px;
     margin: 20px auto;
