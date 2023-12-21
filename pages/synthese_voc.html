@@ -1,6 +1,10 @@
+<!-- Ce code a été réalisé et intégré par : Maxence Cornec - Jean Baptiste Seydoux - Susan Bachelot
+La page chiffres_en_l permet : entrée voix , sortie écriture de ce que l'on vient de dire
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--encodage utf8, view responsive, recherche du fichier css, recherche du fichier script.js, Titre-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synthèse vocale</title>
@@ -8,8 +12,41 @@
 
 </head>
 <body>
+  <!--insertion du logo et de la barre de navigation-->
+  <header>
+    <div class="logo">
+        <img src="../img/logo.png" alt="Logo des distingués"  style="max-width: 100px; max-height: 100px;">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Accueil</a>
+            </li>
+            <li><a href="#">Calcul</a>
+                <ul>
+                    <li><a href="chiffres_en_l.html">- Chiffres vers mots</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">Texte</a>
+                <ul>
+                  <li><a href="voyellesconsonnes.html">- Voyelles consonnes</a></li>
+                  <li><a href="aide_lecture_paragraphe2.html">- Aide lecuture paragraphe</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">Vocal</a>
+                <ul>
+                    <li><a href="synthese_voc.html">- Synthétiseur vocal</a></li>
+
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<!--contenu de la page-->
     <header>
-        <h1>Chiffres en Lettres</h1>
+        <h1>Synthétiseur Vocal</h1>
     </header>
   <p>Parlez et voyez ce que vous dites ! Veillez à activer le microphone sur votre navigateur</p>
   <p id="output"></p>
