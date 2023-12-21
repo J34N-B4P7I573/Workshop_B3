@@ -112,3 +112,12 @@ footer {
     width: 100%;
     font-size: 1px;
   }
+
+.number {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.status {
+    font-size: 24px;
+    color: green;
+}
