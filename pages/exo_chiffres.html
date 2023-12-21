@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice Nombres Avec Reco Voc</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Exercice Prononciation Nombres avec Reconnaissance Vocale</h1>
+    </header>
+    <p>
+        Cet exercice à pour but de vous aider à prononcer les nombres. Vous allez voir un nombre généré aléatoirement <br>
+        Pensez à sa prononciation et une fois que vous êtes prêt, Appuyez sur le bouton puis prononcer le nombre. <br>
+        Si c'est bon, il sera affiché "Succès" sinon "Essayez encore".
+    </p>
+    <div class="number" id="number"></div>
+    <button onclick="startRecognition()">Faire une proposition</button>
+    <div class="status" id="status"></div>
+    <div class="counter">Score: <span id="correctCount">0</span></div>
+</body>
+</html>
