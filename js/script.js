@@ -202,3 +202,19 @@ function detecterCaracteres() {
 
     return traduction.trim();
   }
+
+  function saveTextAsFile() {
+    var textToSave = document.getElementById('textInput').value;
+
+    var blob = new Blob([textToSave], { type: 'text/plain;charset=utf-8' });
+    var link = document.createElement('a');
+
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'saved_text.txt';
+    link.style.display = 'none';
+
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+  }
