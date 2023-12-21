@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
 }
 
 .underline {
@@ -56,9 +55,9 @@ nav ul li ul {
     position: absolute;
     background-color: #333;
     padding: 10px;
-    top: 100%; /* Display the submenu below the parent item */
+    top: 100%; 
     left: 0;
-    width: 150px; /* Set the width of the submenu */
+    width: 150px; 
 }
 
 nav ul li ul li {
