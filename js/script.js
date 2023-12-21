@@ -1,3 +1,6 @@
+let currentNumber = 0;
+let correctCount = 0;
+
 function soulignerLettres() {
     // Récupérer le texte de la zone de texte
     var inputText = document.getElementById("textInput").value;
@@ -218,3 +221,28 @@ function detecterCaracteres() {
 
     document.body.removeChild(link);
   }
+
+  function generateNumber() {
+    currentNumber = Math.floor(Math.random() * 100);
+    document.getElementById('number').innerText = currentNumber;
+    document.getElementById('status').innerText = '';
+}
+
+window.onload = generateNumber;
+
+function startRecognition() {
+    var recognition = new webkitSpeechRecognition();
+    recognition.lang = 'fr-FR';
+    recognition.onresult = function(event) {
+        let spokenNumber = event.results[0][0].transcript.trim();
+        if (parseInt(spokenNumber, 10) === currentNumber) {
+            correctCount++;
+            document.getElementById('status').innerText = 'Succès!';
+            document.getElementById('correctCount').innerText = correctCount;
+            setTimeout(generateNumber, 2000);
+        } else {
+            document.getElementById('status').innerText = 'Essaie encore!';
+        }
+    };
+    recognition.start();
+}
