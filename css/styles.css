@@ -1,7 +1,24 @@
+@font-face {
+    font-family: 'RobotoItalicBold';
+    src: url('../fonts/Roboto-BoldItalic.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/Roboto-Medium.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    font-family: "RobotoMedium", sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #dddaa654;
 }
 
 .underline {
@@ -15,11 +32,25 @@ body {
 
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #e4df89;
+    color: black;
     padding: 10px;
     width: 100%;
     height: 100%;
+    border-bottom: solid 3px transparent; 
+    border-radius: 10px;
+    border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.8), rgba(255,255,255,0)) 1 100%;
+}
+
+.logo{
+    margin: 20 0 0 0
+}
+
+h1 {
+    color: black; 
+    font-size: 2em; 
+    text-align: center;
+    font-size: 30px;
 }
 
 
@@ -39,8 +70,9 @@ nav ul li {
 }
 
 nav ul li a {
+    font-family: "RobotoItalicBold", sans-serif;
     text-decoration: none;
-    color: #fff;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     display: block;
@@ -69,26 +101,48 @@ nav ul li ul li {
     font-size: 1.2em;
     line-height: 1.6;
     margin: 20px 0;
+    padding: 10 10 0 10;
+    text-align: justify;
+
 }
 
 .sub-paragraphe{
+    font-family: "RobotoItalicBold", sans-serif;
     font-size: 1.5em; 
-    color:blue;
+    color:#8D8C71;
+    text-align: center;
+}
+
+.surlibeige{
+    background-color: #e4df89;
+}
+
+.surlirose{
+    background-color: pink;
 }
 
 .content {
-    max-width: 800px;
+    max-width: 80%;
     margin: 20px auto;
+    text-align: justify; 
+    padding: 20px;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #e4df89;
+    color: black;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-bottom: solid 3px transparent; 
+    border-radius: 10px;
+    border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.8), rgba(255,255,255,0)) 1 100%;
+}
+
+footer p{
+    font-family: "RobotoItalicBold", sans-serif;
 }
 
 #inputField {
