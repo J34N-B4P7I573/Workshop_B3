@@ -44,7 +44,20 @@ header {
 }
 
 .logo{
-    margin: 20 0 0 0
+    overflow: hidden;
+    margin: 20 0 0 0;
+    display: flex;
+    align-items: center; 
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
 }
 
 h1 {
@@ -117,10 +130,11 @@ nav ul li ul li {
     font-size: 1.5em; 
     color:#8D8C71;
     text-align:center;
+    background-color: #dddaa654;
 }
 
 .surlibeige{
-    background-color: #e4df89;
+    background-color:rgb(173, 229, 173);
 }
 
 .surlirose{
@@ -128,7 +142,7 @@ nav ul li ul li {
 }
 
 .content {
-    background-color: #e4df89;
+    background-color: #dddaa654;
     max-width: 80%;
     margin: 20px auto;
     text-align: justify; 
@@ -204,7 +218,7 @@ footer p{
 }
 
 #multiplication-tables {
-    background-color: #e4df89;
+    background-color: #dddaa654;
     margin: 20px;
     padding: 10px;
     text-align: center;
@@ -234,4 +248,16 @@ footer p{
 
 #button-guess{
     text-align: center;
+}
+
+.title-middle {
+    text-align: center;
+    margin-left: 35%;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.title-middle p{
+    font-family: "RobotoItalicBold", sans-serif;
+    
 }
