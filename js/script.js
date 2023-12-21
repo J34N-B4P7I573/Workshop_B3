@@ -2,18 +2,17 @@ let currentNumber = 0;
 let correctCount = 0;
 
 function soulignerLettres() {
-    // Récupérer le texte de la zone de texte
+    //Ce script traite un texte récupéré depuis une zone de texte. Il commence par séparer ce texte en lettres individuelles. 
+    //Ensuite, pour chaque lettre, une balise <span> est créée et une classe CSS spécifique est attribuée en fonction de la nature de la lettre, soit une voyelle ou une consonne. 
+    //Finalement, le texte modifié avec ces balises <span> est affiché dans un paragraphe.
     var inputText = document.getElementById("textInput").value;
 
-    // Séparer le texte en lettres individuelles
     var letters = inputText.split("");
 
-    // Créer une nouvelle chaîne avec des balises span pour chaque lettre
     var resultText = "";
     for (var i = 0; i < letters.length; i++) {
         var currentLetter = letters[i].toLowerCase();
 
-        // Ajouter une classe CSS spécifique à la voyelle ou à la consonne
         if ("aeiou".indexOf(currentLetter) !== -1) {
             resultText += '<span class="underline">' + letters[i] + '</span>';
         } else if (currentLetter >= 'a' && currentLetter <= 'z') {
@@ -23,11 +22,14 @@ function soulignerLettres() {
         }
     }
 
-    // Afficher le résultat dans le paragraphe
     document.getElementById("result").innerHTML = resultText;
 }
 
 function detecterCaracteres() {
+
+    //Ce script concerne la manipulation d'un tableau dans une interface utilisateur. Premièrement, elle ajoute une ligne vide avec une couleur de fond rouge. Pour maintenir cette cellule vide, un espace non rompu est inséré. 
+    //Ensuite, après avoir ajouté des données au tableau, le champ de saisie est automatiquement effacé pour préparer la prochaine entrée. Enfin, l'algorithme alterne les couleurs des lignes du tableau pour améliorer la lisibilité et l'esthétique visuelle.
+    //Pour marquer la fin d'une ligne, les symbôles <.:!?> font l'équivalent d'une <Entrer>.
     var inputField = document.getElementById('inputField');
     var inputValue = inputField.value;
 
@@ -37,16 +39,13 @@ function detecterCaracteres() {
       var cell = newRow.insertCell(0);
       cell.innerHTML = inputValue;
 
-      // Ajoute une ligne vide avec la couleur rouge
       var emptyRow = tableBody.insertRow(-1);
       var emptyCell = emptyRow.insertCell(0);
-      emptyCell.innerHTML = '&nbsp;'; // Ajoute un espace non rompu pour maintenir la cellule vide
+      emptyCell.innerHTML = '&nbsp;';
       emptyRow.classList.add('emptyRow');
 
-      // Efface le champ de saisie après l'ajout au tableau
       inputField.value = '';
 
-      // Alterne les couleurs des lignes
       var rows = tableBody.getElementsByTagName('tr');
       for (var i = 0; i < rows.length; i++) {
         rows[i].style.backgroundColor = i % 2 === 0 ? '#f2f2f2' : 'white';
@@ -72,16 +71,14 @@ function detecterCaracteres() {
         cell.innerHTML = ligne.trim();
       });
 
-      // Ajoute une ligne vide avec la couleur rouge
+      
       var emptyRow = tableBody.insertRow(-1);
       var emptyCell = emptyRow.insertCell(0);
-      emptyCell.innerHTML = '&nbsp;'; // Ajoute un espace non rompu pour maintenir la cellule vide
+      emptyCell.innerHTML = '&nbsp;';
       emptyRow.classList.add('emptyRow');
 
-      // Efface le champ de saisie après l'ajout au tableau
       inputField.value = '';
 
-      // Alterne les couleurs des lignes
       var rows = tableBody.getElementsByTagName('tr');
       for (var i = 0; i < rows.length; i++) {
         rows[i].style.backgroundColor = i % 2 === 0 ? '#f2f2f2' : 'white';
@@ -90,24 +87,25 @@ function detecterCaracteres() {
   }
 
   function traduireEnLettres() {
+    //Pour ce script, le but est de traduire des chiffres en lettres, et ensuite afficher le résultat de cette conversion. 
+    //Il s'agit donc d'un processus en deux étapes : premièrement, la traduction numérique en texte, et deuxièmement, la présentation de ce texte traduit à l'utilisateur.
     var inputNumber = document.getElementById('inputNumber').value;
     var outputText = document.getElementById('outputText');
 
-    // Traduction des chiffres en lettres
     var traduction = traduireChiffresEnLettres(inputNumber);
 
-    // Affichage du résultat
     outputText.textContent = "Votre traduction en Lettres : " + traduction;
   }
 
   function traduireChiffresEnLettres(chiffres) {
-    // Dictionnaire des chiffres en lettres jusqu'à 19
+    //Ce script convertit des chiffres en leurs équivalents en lettres. Il utilise des dictionnaires définis pour les chiffres de 0 à 19 et pour les dizaines, permettant ainsi une traduction précise des nombres. 
+    //Le processus de conversion est appliqué aux nombres dans différentes plages : de 0 à 9, de 10 à 99, de 100 à 999, et de 1000 à 9999. 
+    //Une fois la conversion effectuée, le résultat est affiché pour l'utilisateur.
     var chiffresEnLettresJusquA19 = [
       "", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf",
       "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"
     ];
 
-    // Dictionnaire des dizaines en lettres
     var dizainesEnLettres = [
       "", "", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante", "quatre-vingt", "quatre-vingt"
     ];
@@ -115,7 +113,6 @@ function detecterCaracteres() {
     var traduction = "";
 
     if (chiffres.length === 1) {
-      // Pour les chiffres de 0 à 9
       var chiffre = parseInt(chiffres[0]);
       if (!isNaN(chiffre)) {
         traduction = chiffresEnLettresJusquA19[chiffre];
@@ -123,7 +120,6 @@ function detecterCaracteres() {
         traduction = " (non-numérique) ";
       }
     } else if (chiffres.length === 2) {
-      // Pour les chiffres de 10 à 99
       var dizaine = parseInt(chiffres[0]);
       var unite = parseInt(chiffres[1]);
 
@@ -140,7 +136,6 @@ function detecterCaracteres() {
         traduction = " (non-numérique) ";
       }
     } else if (chiffres.length === 3) {
-      // Pour les chiffres de 100 à 999
       var centaine = parseInt(chiffres[0]);
       var dizaine = parseInt(chiffres[1]);
       var unite = parseInt(chiffres[2]);
@@ -163,7 +158,6 @@ function detecterCaracteres() {
         traduction = " (non-numérique) ";
       }
     } else if (chiffres.length === 4) {
-      // Pour les chiffres de 1000 à 9999
       var millier = parseInt(chiffres[0]);
       var centaine = parseInt(chiffres[1]);
       var dizaine = parseInt(chiffres[2]);
@@ -223,14 +217,20 @@ function detecterCaracteres() {
   }
 
   function generateNumber() {
+    //Cette fonction génère un nombre aléatoire entre 0 et 99 en utilisant Math.random() et Math.floor(). 
+    //Ensuite, elle met à jour le contenu textuel de l'élément HTML avec l'identifiant 'number' en y affichant ce nombre généré. La fonction réinitialise également le texte de l'élément avec l'identifiant 'status', le mettant à une chaîne vide.
     currentNumber = Math.floor(Math.random() * 100);
     document.getElementById('number').innerText = currentNumber;
     document.getElementById('status').innerText = '';
 }
 
+//Génération d'un nombre lors du chargement de la page.
 window.onload = generateNumber;
 
 function startRecognition() {
+    //Ce script initialise la reconnaissance vocale en français et compare le nombre prononcé par l'utilisateur avec un nombre prédéfini. 
+    //S'il y'a correspondance, il augmente de +1 le compteur de succès et affiche un message de Succès, puis génère un nouveau nombre après un court délai. 
+    //En cas d'erreur, un message d'encouragement pour réessayer est affiché.
     var recognition = new webkitSpeechRecognition();
     recognition.lang = 'fr-FR';
     recognition.onresult = function(event) {
