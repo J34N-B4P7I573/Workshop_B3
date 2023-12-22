@@ -247,10 +247,27 @@ function startRecognition() {
     recognition.start();
 }
 
+let voices = [];
+
+function populateVoiceList() {
+    voices = speechSynthesis.getVoices();
+    let voiceSelect = document.getElementById('voiceSelect');
+    voices.forEach((voice, i) => {
+        let option = document.createElement('option');
+        option.textContent = voice.name + ' (' + voice.lang + ')';
+        option.setAttribute('data-lang', voice.lang);
+        option.setAttribute('data-name', voice.name);
+        voiceSelect.appendChild(option);
+    });
+}
+
+speechSynthesis.onvoiceschanged = populateVoiceList;
+
 function speak() {
     let text = document.getElementById('textToSpeak').value;
     let speech = new SpeechSynthesisUtterance(text);
-    speech.lang = 'fr-FR';
+    let selectedVoiceName = document.getElementById('voiceSelect').selectedOptions[0].getAttribute('data-name');
+    speech.voice = voices.find(voice => voice.name === selectedVoiceName);
     window.speechSynthesis.speak(speech);
 }
 
