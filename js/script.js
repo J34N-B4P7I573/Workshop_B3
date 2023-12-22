@@ -253,3 +253,7 @@ function speak() {
     speech.lang = 'fr-FR';
     window.speechSynthesis.speak(speech);
 }
+
+function stopSpeaking() {
+    window.speechSynthesis.cancel();
+}
