@@ -246,3 +246,14 @@ function startRecognition() {
     };
     recognition.start();
 }
+
+function speak() {
+    let text = document.getElementById('textToSpeak').value;
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = 'fr-FR';
+    window.speechSynthesis.speak(speech);
+}
+
+function stopSpeaking() {
+    window.speechSynthesis.cancel();
+}
