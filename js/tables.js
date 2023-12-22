@@ -1,3 +1,6 @@
+//Ce script ajoute un listener d'événements pour exécuter du code une fois que le DOM est chargé. 
+//Il crée et affiche des tables de multiplication de 1 à 10 dans un élément conteneur. 
+//Pour chaque table, il génère un div avec un titre et 10 cellules, chacune affichant le produit d'une multiplication (i x j).
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('multiplication-tables');
 
